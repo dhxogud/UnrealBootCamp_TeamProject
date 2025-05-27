@@ -14,4 +14,5 @@ class P20250513_API AMyGameModeBase : public AGameModeBase
 {
 	GENERATED_BODY()
 	
+	AMyGameModeBase();
 };
