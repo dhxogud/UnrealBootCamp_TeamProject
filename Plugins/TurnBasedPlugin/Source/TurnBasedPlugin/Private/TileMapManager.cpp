@@ -157,14 +157,14 @@ TArray<ATileBase*> ATileMapManager::FindPath(FVector StartLocation, FVector EndL
         if (CurrentTile == GoalTile)
         {
             TArray<ATileBase*> Path;
-            // 경로 추적
+
             while (CurrentTile->SearchTileData.Parent != nullptr)
             {
                 Path.Insert(CurrentTile, 0); // 경로를 뒤에서부터 추적
                 CurrentTile = CurrentTile->SearchTileData.Parent; // 부모 타일로 이동
             }
 
-			// 경로 완료 후 부모 초기화
+            // 경로 완료 후 부모 초기화
             for (ATileBase* Tile : Path)
             {
                 if (Tile)
@@ -186,7 +186,7 @@ TArray<ATileBase*> ATileMapManager::FindPath(FVector StartLocation, FVector EndL
             if (ClosedList.Contains(Neighbor))
                 continue; // 이미 검사한 타일은 건너뛰기
 
-			int32 TerrainCost = Neighbor->TerrainCost;// 지형 비용
+            int32 TerrainCost = Neighbor->TerrainCost; // 지형 비용
             int32 TentativeGCost = FVector::DistSquared(CurrentTile->GetActorLocation(), Neighbor->GetActorLocation()) + TerrainCost;
 
             // GCost가 더 작거나 OpenList에 없는 경우
@@ -204,9 +204,9 @@ TArray<ATileBase*> ATileMapManager::FindPath(FVector StartLocation, FVector EndL
             }
         }
     }
-
     return TArray<ATileBase*>(); // 경로를 찾을 수 없으면 빈 배열 반환
 }
+
 
 TArray<ATileBase*> ATileMapManager::GetNeighbors(ATileBase* Tile)
 {
