@@ -17,15 +17,12 @@ struct FSearchTileData
 	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "Pathfinding")
 	int32 Y;
 
-	// 시작 타일에서 현재 타일까지의 이동 비용
 	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "Pathfinding")
 	int32 GCost;
 
-	// 현재 타일에서 목표 타일까지의 추정된 이동 비용
 	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "Pathfinding")
 	int32 HCost;
 
-	// GCost와 HCost의 합
 	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "Pathfinding")
 	int32 FCost;
 
@@ -61,15 +58,12 @@ public:
 	UPROPERTY(BlueprintReadOnly, Category = "Default", meta = (ExposeOnSpawn = "true"))
 	class ATileMapManager* TileMapManager;
 
-	// A* 경로 탐색을 위한 데이터
 	UPROPERTY(VisibleAnywhere, BlueprintReadOnly, Category = "Pathfinding")
 	FSearchTileData SearchTileData;
 
-	// 이동 가능 여부
 	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "Pathfinding")
 	bool bIsWalkable;
 
-	// 지형 비용 (예: 장애물, 물 등)
 	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "Pathfinding")
 	uint8 TerrainCost;
 };
