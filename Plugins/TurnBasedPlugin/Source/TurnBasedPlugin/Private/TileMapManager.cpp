@@ -145,14 +145,6 @@ TArray<ATileBase*> ATileMapManager::FindPath(FVector StartLocation, FVector EndL
                 CurrentTile = CurrentTile->SearchTileData.Parent;
             }
 
-            for (ATileBase* Tile : Path)
-            {
-                if (Tile)
-                {
-                    Tile->SearchTileData.Parent = nullptr;
-                }
-            }
-
             ResetAllTileSearchData();
 
             return Path;
