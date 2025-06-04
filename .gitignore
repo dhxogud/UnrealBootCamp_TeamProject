@@ -76,3 +76,6 @@ Plugins/*/Intermediate/*
 
 # Cache files for the editor to use
 DerivedDataCache/*
+Content/Dungeon_Modular_V1/Textures/T_Ceiling_01_N.uasset
+Content/Dungeon_Modular_V1/Textures/T_Stone_Wall_01_Master_N.uasset
+Content/Dungeon_Modular_V1/Textures/T_Stone_Wall_02_Master_N.uasset
